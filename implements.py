@@ -99,6 +99,5 @@ class Ball(Basic):
         pass
     
     def alive(self):
-        # ============================================
-        # TODO: Implement a service that returns whether the ball is alive or not
+        return self.rect.bottom < config.display_dimension[1]
         pass
