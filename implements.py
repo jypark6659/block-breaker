@@ -35,7 +35,6 @@ class Block(Basic):
     
     def collide(self):
         self.alive = False
-        pass
 
 
 class Paddle(Basic):
@@ -85,8 +84,7 @@ class Ball(Basic):
             ):
                 self.dir = 180 - self.dir
             break
-        pass
-
+        
     def collide_paddle(self, paddle: Paddle) -> None:
         if self.rect.colliderect(paddle.rect):
             self.dir = 360 - self.dir + random.randint(-5, 5)
@@ -96,8 +94,6 @@ class Ball(Basic):
             self.dir = 180 - self.dir
         if self.rect.top <= 0:
             self.dir = 360 - self.dir
-        pass
     
     def alive(self):
         return self.rect.bottom < config.display_dimension[1]
-        pass
