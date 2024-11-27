@@ -65,25 +65,25 @@ class Ball(Basic):
 
     def collide_block(self, blocks: list):
         for block in blocks:
-        if block.alive and self.rect.colliderect(block.rect):
-            block.collide()
-            if (
-                self.rect.bottom >= block.rect.top
-                and self.rect.top <= block.rect.top
-            ) or (
-                self.rect.top <= block.rect.bottom
-                and self.rect.bottom >= block.rect.bottom
-            ):
-                self.dir = 360 - self.dir
-            if (
-                self.rect.right >= block.rect.left
-                and self.rect.left <= block.rect.left
-            ) or (
-                self.rect.left <= block.rect.right
-                and self.rect.right >= block.rect.right
-            ):
-                self.dir = 180 - self.dir
-            break
+            if block.alive and self.rect.colliderect(block.rect):
+                block.collide()
+                if (
+                    self.rect.bottom >= block.rect.top
+                    and self.rect.top <= block.rect.top
+                ) or (
+                    self.rect.top <= block.rect.bottom
+                    and self.rect.bottom >= block.rect.bottom
+                ):
+                    self.dir = 360 - self.dir
+                if (
+                    self.rect.right >= block.rect.left
+                    and self.rect.left <= block.rect.left
+                ) or (
+                    self.rect.left <= block.rect.right
+                    and self.rect.right >= block.rect.right
+                ):
+                    self.dir = 180 - self.dir
+                break
         
     def collide_paddle(self, paddle: Paddle) -> None:
         if self.rect.colliderect(paddle.rect):
